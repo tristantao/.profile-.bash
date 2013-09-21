@@ -2,8 +2,8 @@
 # Author: Tristan Tao
 # Purpose: for those lazy people who don't want to (can't) type all the commands properly...
 
-alias desk='cd    /Users/ttao/Desktop'
-alias down='cd    /Users/ttao/Downloads'
+#alias desk='cd    /Users/ttao/Desktop'
+#alias down='cd    /Users/ttao/Downloads'
 
 
 #WARN: This irreversibly changes default behavior, don't forget to change back at some point.
