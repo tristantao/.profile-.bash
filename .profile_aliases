@@ -2,9 +2,25 @@
 # Author: Tristan Tao
 # Purpose: for those lazy people who don't want to (can't) type all the commands properly...
 
-#alias desk='cd    /Users/ttao/Desktop'
-#alias down='cd    /Users/ttao/Downloads'
+alias desk='cd    /Users/t-rex-Box/Desktop'
+alias down='cd    /Users/t-rex-Box/Downloads'
+alias eleme='open  /Volumes/Elements/'
+alias uneleme='diskutil unmount /Volumes/Elements/'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs $@'
+alias clip='pbcopy'
 
+#git stuff
+alias gs='git status'
+alias gb='git branch'
+
+#rails stuff
+base='/Users/t-rex-Box/Desktop/work/teamleada.com'
+alias leada='cd $base; ll'
+alias css="cd '$base/app/assets/stylesheets'; ll"
+alias js="cd '$base/app/assets/javascripts'; ll"
+alias cont="cd '$base/app/controllers'; ll"
+alias views="cd '$base/app/views'; ll"
+alias seeds="cd '$base/db/seeds'; ll"
 
 #WARN: This irreversibly changes default behavior, don't forget to change back at some point.
 alias watch="watch -n 1 'tail -n $1 $2'"
