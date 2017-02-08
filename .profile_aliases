@@ -2,37 +2,75 @@
 # Author: Tristan Tao
 # Purpose: for those lazy people who don't want to (can't) type all the commands properly...
 
+alias ace='cd     /Users/t-rex-Box/Library/Application\ Support/com.yourcompany.yourapp_144146342325572/drive_c/_acestream_cache_'
+
 alias desk='cd    /Users/t-rex-Box/Desktop'
 alias down='cd    /Users/t-rex-Box/Downloads'
 alias eleme='open  /Volumes/Elements/'
 alias uneleme='diskutil unmount /Volumes/Elements/'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs $@'
 alias clip='pbcopy'
+alias lvim='vim'
+alias vi='vim'
 
 #git stuff
 alias gs='git status'
 alias gb='git branch'
+alias gbd='git branch -d'
+alias gd='git diff'
+alias gcm='git commit -m'
+alias gpush='git push origin master'
+alias gpull='git pull origin master'
+
+alias gprod='git checkout production'
+alias gmaster='git checkout master'
+alias gbeta='git checkout beta'
+
+#fab stuff
+alias fabr='cd /Users/t-rex-Box/Desktop/work/fabric'
 
 #rails stuff
 base='/Users/t-rex-Box/Desktop/work/teamleada.com'
 alias leada='cd $base; ll'
+
 alias css="cd '$base/app/assets/stylesheets'; ll"
 alias js="cd '$base/app/assets/javascripts'; ll"
 alias cont="cd '$base/app/controllers'; ll"
+alias mod="cd '$base/app/models'; ll"
 alias views="cd '$base/app/views'; ll"
-alias seeds="cd '$base/db/seeds'; ll"
+alias seeds="cd '$base/db/seeds/'; ll"
+alias rbs='rake db:seed'
+alias rdb='pg_restore --verbose --clean --no-acl --no-owner -h localhost -U t-rex-Box -d leada_development'
+
+#Vive Specific Stuff
+alias vv='base="/Users/t-rex-Box/Desktop/work/vive-web";export base; cd $base; ll'
+alias vive_up='foreman start -f Procfile.dev.tristan'
+alias service="cd '/Users/t-rex-Box/Desktop/work/vive-web/app/services'; ll"
+alias worker="cd '/Users/t-rex-Box/Desktop/work/vive-web/app/workers'; ll"
+
+alias rcs='cd /Users/t-rex-Box/Desktop/work/racesuitsizes.com/; ll'
 
 #WARN: This irreversibly changes default behavior, don't forget to change back at some point.
-alias watch="watch -n 1 'tail -n $1 $2'"
-
+#alias watch="watch -n 1 'tail -n $1 $2'"
 
 #ls on steroid
 alias ll='ls -alF'
 alias la='ls -A'
+alias lla='ls -alF'
 alias l='ls -CF'
 
 #some safety wire.
 alias mv='mv -i'
+#alias mvg='mv "$@"; cd !$;'
+
+mv_cd() { 
+    declare -a files
+    while (($# > 1)); do 
+        files+=("$1")
+        shift
+    done
+    mv "${files[@]}" "$1" && cd "$1"
+}
 
 #Typos that happen a lot. A lot. A LOT.
 alias lll='ll'
@@ -51,6 +89,11 @@ alias egrep='egrep --color=auto'
 alias df='df -h'
 alias du_nf='du -h nf_*'
 
+#alias gr="grep -r $@ \."
+
+function gr { grep -rni "$1" . --color; }
+function grr { ps ax | grep rails; }
+
 #alias diskspace="du -S | sort -n -r |more"
 alias ..='cd ..; ll'
 alias ...='cd ../..; ll'
@@ -60,7 +103,11 @@ alias ......='cd ../../../../..; ll'
 alias .......='cd ../../../../../..; ll'
 alias ........='cd ../../../../../../..; ll'
 alias .........='cd ../../../../../../../..; ll'
+alias lcd='cd'
 
 alias ,,='..'
 alias ,,,='...'
 alias ,,,,='....'
+
+alias starwars='telnet towel.blinkenlights.nl'
+
