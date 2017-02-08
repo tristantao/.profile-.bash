@@ -2,8 +2,6 @@
 # Author: Tristan Tao
 # Purpose: for those lazy people who don't want to (can't) type all the commands properly...
 
-alias ace='cd     /Users/t-rex-Box/Library/Application\ Support/com.yourcompany.yourapp_144146342325572/drive_c/_acestream_cache_'
-
 alias desk='cd    /Users/t-rex-Box/Desktop'
 alias down='cd    /Users/t-rex-Box/Downloads'
 alias eleme='open  /Volumes/Elements/'
